@@ -1,0 +1,23 @@
+app = "websshabi"
+primary_region = "phx"
+
+[env]
+Server = ""
+Spot = ""
+idu = ""
+secret = ""
+
+[http_service]
+auto_start_machines = true
+auto_stop_machines = true
+force_https = true
+internal_port = 8080
+min_machines_running = 0
+processes = [ "app" ]
+
+[[mounts]]
+destination = "/code/nezha"
+source = "websshabi_data"
+
+[[vm]]
+size = "shared-cpu-1x"
