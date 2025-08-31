@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /code/nezha
+
 if [ -n "$Server" ]; then
     echo "已设置Server,执行TZ"
     ARCH=$(uname -m)
@@ -55,6 +57,9 @@ else
 fi
 
 sleep 3
-chmod +x /webssh
-/webssh
+mv /webssh /code/nezha/
+chmod +x webssh
+
+/code/nezha/webssh
+
 tail -f /dev/null
